@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GA4 Marketing Assignment</title>
+</head>
+
+<body>
+  <h1>Marketing Campaign</h1>
+
+  <h2>Lead Generation Form</h2>
+
+  <form id="leadForm">
+    <input type="text" id="name" placeholder="Your Name" required><br><br>
+    <input type="email" id="email" placeholder="Your Email" required><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="successMessage"></p>
+
+  <h2>Promotional Video</h2>
+
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    title="Promotional Video"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    document.getElementById("leadForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      dataLayer.push({
+        event: "successful_form_submission"
+      });
+
+      document.getElementById("successMessage").innerText =
+        "Form submitted successfully!";
+    });
+  </script>
+
+</body>
+</html>
